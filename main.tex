@@ -1,0 +1,169 @@
+\documentclass{article}
+
+% Use fontspec for custom fonts
+\usepackage[absolute,overlay]{textpos}
+\usepackage{graphicx}
+\usepackage{microtype} % For advanced spacing control
+\usepackage{calc} % For width calculation
+\usepackage{fontspec}
+\usepackage{tikz}
+\usepackage{microtype}
+\setmainfont{THSarabun.ttf}[
+    BoldFont = THSarabun-Bold.ttf
+]
+
+\usepackage[normalem]{ulem}
+\usepackage{amsmath} % Required for \stackrel
+\usepackage{xcolor}
+
+% Strict margin settings
+\usepackage[a4paper, left=3cm, right=2cm, top=1.5cm, bottom=2cm]{geometry}
+
+% Ensure no text exceeds margins
+\sloppy
+
+% Line spacing
+\usepackage{setspace}
+\setstretch{1.9}
+
+% Thai numbering and proper UTF-8 handling
+\usepackage[thai,english]{babel}
+
+\pagenumbering{gobble}
+
+% Define a global Y position counter (starting at a specified position)
+\newdimen\CurrentYPosition
+\CurrentYPosition=6.15cm % Initial starting point for the first paragraph
+
+% Define the spacing between paragraphs (6pt converted to cm for compatibility)
+\newcommand{\ParagraphSpacing}{0.21cm} % Adjust as needed
+
+% Custom paragraph marker counter
+\newcounter{mainparagraph} % Counter for automatic numbering
+
+% Thai numbers mapping
+\newcommand{\thainumber}[1]{%
+    \ifcase#1 ๐\or ๑\or ๒\or ๓\or ๔\or ๕\or ๖\or ๗\or ๘\or ๙\else#1\fi%
+}
+
+% Display Thai numbers for the counter
+\renewcommand{\themainparagraph}{\thainumber{\value{mainparagraph}}}
+
+% Paragraph marker command (acts as a number counter)
+\newcommand{\parmark}{\refstepcounter{mainparagraph}\themainparagraph.}
+
+
+
+
+\newcommand{\TabOne}{\hspace*{1.73cm}}
+\newcommand{\TabTwo}{\hspace*{2.42cm}}
+\newcommand{\TabThree}{\hspace*{3.32cm}}
+
+\newcommand{\TabAft}{\hspace*{0.25cm}}
+\newcommand{\TabAftTwo}{\hspace*{0cm}}
+% Special newline with extra space before (like Word's "Before 6pt")
+\newcommand{\newpar}{\vspace{0.21cm}}
+
+% Command for Thai Distributed Text
+\newcommand{\thaidistributed}[1]{%
+    \spaceskip=0.5em plus 1em minus 0.3em % Controls inter-word spacing
+    \xspaceskip=0.5em % Controls extra space between characters
+    #1
+}
+
+
+
+
+
+
+\begin{document}
+
+
+% Set font size to 20pt
+\fontsize{16pt}{16pt}\selectfont
+
+
+\begin{textblock*}{15cm}(2.3cm, 1.15cm)  % (width, x-pos, y-pos)
+\includegraphics[height=1.5cm]{Bird.png} % Ensure path is correct
+\end{textblock*}
+
+\begin{textblock*}{15cm}(8.85cm, 1.95cm)  % (width, x-pos, y-pos)
+{\fontsize{29pt}{29pt}\textbf{บันทึกข้อความ}}
+\end{textblock*}
+
+
+
+\begin{textblock*}{15cm}(2.8cm, 3.1cm)  % (width, x-pos, y-pos)
+\noindent
+{\fontsize{20pt}{24pt}\selectfont\textbf{ส่วนราชการ}} 
+\hspace{-0.2cm} 
+{\raisebox{-0.5ex}{\makebox[\dimexpr\linewidth-0.78cm\relax]{\leaders\hbox to 0.1em{\hss{\fontsize{10pt}{10pt}\selectfont .}\hss}\hfill}}} \\[1.5ex]
+\end{textblock*}
+
+
+\begin{textblock*}{15cm}(2.8cm, 3.9cm)  % (width, x-pos, y-pos)
+\noindent
+{\fontsize{20pt}{24pt}\selectfont\textbf{ที่}} 
+\hspace{-0.2cm} 
+{\raisebox{-0.5ex}{\makebox[\dimexpr\linewidth-7.3cm\relax]{\leaders\hbox to 0.1em{\hss{\fontsize{10pt}{10pt}\selectfont .}\hss}\hfill}}} \\[1.5ex]
+\end{textblock*}
+
+\begin{textblock*}{15cm}(10.9cm, 3.9cm)  % (width, x-pos, y-pos)
+\noindent
+{\fontsize{20pt}{24pt}\selectfont\textbf{วันที่}} 
+\hspace{-0.25cm} 
+{\raisebox{-0.5ex}{\makebox[\dimexpr\linewidth-7.48cm\relax]{\leaders\hbox to 0.1em{\hss{\fontsize{10pt}{10pt}\selectfont .}\hss}\hfill}}} \\[1.5ex]
+\end{textblock*}
+
+\begin{textblock*}{16cm}(2.8cm, 4.7cm)  % (width, x-pos, y-pos)
+\noindent
+{\fontsize{20pt}{24pt}\selectfont\textbf{เรื่อง}} 
+\hspace{-0.15cm} 
+{\raisebox{-0.5ex}{\makebox[\dimexpr\linewidth-0.38cm\relax]{\leaders\hbox to 0.1em{\hss{\fontsize{10pt}{10pt}\selectfont .}\hss}\hfill}}} \\[1.5ex]
+\end{textblock*}
+
+
+
+\begin{textblock*}{10cm}(5cm, 3.16cm)
+    {\fontsize{16pt}{16pt}{กฝพ.ศซบ.ทอ.(ผพร.โทร.๒-๓๗๖๐)}}
+\end{textblock*}
+
+
+\begin{textblock*}{15cm}(3.5cm, 4.85cm)
+    {\fontsize{16pt}{16pt}{สรุปผลการตรวจสอบการรักษาความมั่นคงปลอดภัยทางไซเบอร์เชิงเทคนิคของ บน.๙}}
+\end{textblock*}
+
+\begin{textblock*}{5cm}(2.2cm, 5.7cm)
+    {\fontsize{16pt}{16pt}{เรียน รอง ผอ.ศซบ.ทอ}}
+\end{textblock*}
+
+
+\vspace*{4.3cm}
+
+\TabOne\parmark\TabAft ตามหนังสือ ศซบ.ทอ.ที่ กห ๐๑๒๓.๔/๕๖๗๘ ลง ๒๙ ธ.ค.๖๑ ได้ขอดำเนินการประเมินและ ตรวจสอบการรักษาความมั่นคงปลอดภัยทางไซเบอร์เชิงเทคนิครวมถึงการสรุปผลให้ความรู้และกำหนดแนวทาง ในการป้องกันระบบสารสนเทศให้เกิดความมั่นคงปลอดภัยให้กับ บน.๙ ระหว่าง ๑๒ - ๓๑ ม.ค.๖๒ นั้น
+
+\newpar
+\TabOne\parmark\TabAft ศซบ.ทอ.ดำเนินการตามข้อ ๑ เรียบร้อยแล้ว ดังนี้
+
+\TabTwo ๒.๑ การตรวจสอบการรักษาความมั่นคงปลอดภัยทางไซเบอร์เชิงเทคนิค เพื่อเสริมสร้าง
+ขีดความสามารถการปฏิบัติการไซเบอร์ โดยใช้แนวทางของมาตรฐาน ISO/IEC 27001:2022 \scalebox{.8}[1.0]{Information security,} \\cybersecurity and privacy protection \scalebox{0.95}[1.0]{ - Information security management systems - Requirements}
+และมาตรฐาน National Institute of Standards and Technology (NIST) 800-115 :\scalebox{1.1}[1.0]{ Technical Guide}\\to Information Security Testing and Assessment ซึ่งเป็นมาตรฐานสากลในการรักษาความมั่นคงปลอดภัย\\ทางไซเบอร์ในการตรวจสอบฯ
+
+
+\TabTwo ๒.๒ ผล\scalebox{1.05}[1.0]{การตรวจสอบการรักษาความมั่นคงปลอดภัยทางไซเบอร์เชิงเทคนิคของ} บน.๙ พบช่องโหว่ที่สำคัญ ดังนี้
+
+\TabThree ๒.๒.๑	อุปกรณ์ที่ไม่มีการตั้งรหัสผ่าน (No Password)
+
+
+
+
+
+
+
+\begin{textblock*}{15cm}(4.2cm, 27cm)
+\begin{flushright}
+    {\fontsize{16pt}{19pt} ๒.๑.๓ ติดตั้ง...}
+\end{flushright}
+\end{textblock*}
+
+\end{document}
